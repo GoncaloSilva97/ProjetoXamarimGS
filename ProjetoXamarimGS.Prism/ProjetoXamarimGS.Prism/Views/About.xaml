@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetoXamarimGS.Prism.Views.About">
+    <ContentPage.Content>
+        <StackLayout Padding="20" BackgroundColor="LightSkyBlue">
+
+
+           
+
+
+
+
+
+
+            <Label Text=" Weather app" FontSize="30"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="By Gonçalo Silva" FontSize="30"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+            <Label Text="The goal of this app is to provide the end user with access to weather forecasts from around the globe." FontSize="20"
+                VerticalOptions="CenterAndExpand" 
+                HorizontalOptions="CenterAndExpand" />
+
+
+
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

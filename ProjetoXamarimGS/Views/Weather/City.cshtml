@@ -1,0 +1,45 @@
+﻿@model ProjetoXamarimGS.Models.CityViewModel
+
+@{
+    ViewData["Title"] = "City";
+}
+
+
+
+<div class="container">
+    <div class="container">
+        <div class="form-group col-nd-offset-3 col-md-S">
+
+
+            <h2>Forecast For Selected City</h2>
+
+            <label asp-for="Name"></Label>
+            <span class="badge alert-primary">@Model.Name</span> <br />
+
+            <label asp-for="Temperature"></Label>
+            <span class="badge alert-prinary">@Model.Temperature ºC</span> <br />
+
+            <label asp-for="Humidity"></label>
+            <span class="badge alert-primary">@Model.Humidity %</span> <br />
+
+            <label asp-for="Pressure"></label>
+            <span class="badge alert-primary">@Model.Pressure Hpa</span> <br />
+
+            <Label asp-for="Wind"></label>
+            <span class="badge alert-prinary">@Model.Wind</span> <br />
+
+            <label asp-for="Weather"></Label>
+            <span class="badge alert-prinary">@Model.Weather</span> <br />
+
+
+            <form method="get">
+                <a asp-controller="Weather" asp-action="SearchByCity" class="btn btn-primary">Back to Search</a>
+            </form>
+
+
+        </div>
+    </div>
+</div>
+
+
+ 

@@ -1,0 +1,93 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="http://prismlibrary.com"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ProjetoXamarimGS.Prism.Views.Weather"
+             Title="{Binding Title}">
+
+
+    <StackLayout Padding="10" BackgroundColor="LightSkyBlue">
+
+                         <Entry
+                        Keyboard="Text"
+                        Placeholder="Enter City"
+                        Text="{Binding SearchCity}" />
+       
+                        <Button
+                        Command="{Binding SearchCommand}"
+                        IsEnabled="{Binding IsEnabled}"
+                        Text="Search" />
+
+   
+
+    <CollectionView ItemsSource="{Binding WeatherList}">
+        <CollectionView.ItemsLayout>
+            <GridItemsLayout  Orientation="Vertical" />
+        </CollectionView.ItemsLayout>
+        <CollectionView.ItemTemplate>
+            <DataTemplate>
+
+                
+                    
+                    
+            
+                    <Grid >
+                        
+                        <Grid.RowDefinitions>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                            <RowDefinition Height="Auto"/>
+                        </Grid.RowDefinitions>
+
+                        <Grid Grid.Row="0">
+                            <Label Grid.Row="0" Grid.ColumnSpan="4" Text="{Binding name}" FontSize="20" FontAttributes="Bold" TextColor="Black"/>
+                            <Label Grid.Row="0" Grid.Column="1" Text=" / " FontSize="20" FontAttributes="Bold" TextColor="Black" />
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding sys.country}" HorizontalOptions="Center"  FontSize="20" FontAttributes="Bold" TextColor="Black" />
+                         
+                        </Grid>
+
+                        <Grid Grid.Row="1">
+                            <Label Grid.Row="0" Grid.Column="3" Text="Today" VerticalOptions="Center" HorizontalOptions="Center" FontSize="15"/>
+                            <Image Grid.Row="1" Grid.Column="1" Source="{Binding weather[0].icon_url}" VerticalOptions="Center" HorizontalOptions="Start"/>
+                            <Label Grid.Row="1" Grid.Column="5" Text="{Binding main.temp, StringFormat='{0:N0}°'}" VerticalOptions="Start" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+
+                            <Label Grid.Row="1" Grid.Column="4" Text="{Binding main.temp_min, StringFormat='{0:N0}°'}" VerticalOptions="End" HorizontalOptions="End" FontSize="20" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="5" Text=" / " VerticalOptions="End" HorizontalOptions="Center" FontSize="20" FontAttributes="Bold"/>
+                            <Label Grid.Row="1" Grid.Column="6" Text="{Binding main.temp_max, StringFormat='{0:N0}°'}" VerticalOptions="End" HorizontalOptions="Start" FontSize="20" FontAttributes="Bold"/>
+
+                            <Label Grid.Row="2" Grid.Column="3" Text="{Binding weather[0].main}" VerticalOptions="Center" HorizontalOptions="Center" FontSize="15"/>
+                        </Grid>
+                        
+                        
+                        
+                        
+                        
+                        <Grid Grid.Row="2">
+                            <Label Grid.Row="0" Grid.Column="0" Text="{Binding wind.speed, StringFormat='{0:N0}km/h'}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="0" Text="Wind" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+
+                            <Label Grid.Row="0" Grid.Column="1" Text="{Binding main.humidity, StringFormat='{0:N0}%'}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="1" Text="Humidity" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+
+                            <Label Grid.Row="0" Grid.Column="2" Text="{Binding main.feels_like, StringFormat='{0:N0}°'}" VerticalOptions="Center" HorizontalOptions="Center"/>
+                            <Label Grid.Row="1" Grid.Column="2" Text="Feels Like" VerticalOptions="Center" HorizontalOptions="Center" FontAttributes="Bold"/>
+                        </Grid>
+
+                        
+                    </Grid>
+
+                    
+
+
+
+
+
+
+                
+            </DataTemplate>
+        </CollectionView.ItemTemplate>
+    </CollectionView>
+    </StackLayout>
+</ContentPage>
